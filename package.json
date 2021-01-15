@@ -1,0 +1,22 @@
+{
+  "name": "elasticsearch-experiments",
+  "version": "1.0.0",
+  "description": "elastic search using node-js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yelkar-snehal/elasticsearch-experiments.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yelkar-snehal/elasticsearch-experiments/issues"
+  },
+  "homepage": "https://github.com/yelkar-snehal/elasticsearch-experiments#readme",
+  "dependencies": {
+    "@elastic/elasticsearch": "^7.10.0"
+  }
+}
