@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/yelkar-snehal/elasticsearch-experiments#readme",
   "dependencies": {
-    "@elastic/elasticsearch": "^7.10.0"
+    "@elastic/elasticsearch": "^7.10.0",
+    "faker": "^5.1.0"
   }
 }
