@@ -37,16 +37,40 @@ async function run () {
   await client.indices.refresh({ index: 'game-of-thrones' })
   
   // Let's search!
-  const { body } = await client.search({
+  // const { body } = await client.search({
+  //   index: 'game-of-thrones',
+  //   // type: '_doc', // uncomment this line if you are using {es} ≤ 6
+  //   body: {
+  //     query: {
+  //       match: { quote: 'winter' }
+  //     }
+  //   }
+  // })
+
+  await client.updateByQuery({
     index: 'game-of-thrones',
-    // type: '_doc', // uncomment this line if you are using {es} ≤ 6
+    refresh: true,
     body: {
+      script: {
+        lang: 'painless',
+        source: 'ctx._source["house"] = "stark"'
+      },
       query: {
-        match: { quote: 'winter' }
+        match: {
+          character: 'stark'
+        }
       }
     }
   })
-  
+
+  const { body } = await client.search({
+    index: 'game-of-thrones',
+    body: {
+      query: { match_all: {} }
+    }
+  })
+
+
   console.log(body.hits.hits)
 }
 

@@ -104,4 +104,7 @@ dist
 .tern-port
 
 # webstorm
-./.idea/
+.idea
+
+# misc
+.DS_Store
